@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：HTML5_canvas_transform
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/5
+  Time(创建时间)： 10:39
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        .p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        canvas {
+            border: 1px solid cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="p">
+    <canvas class="animated zoomInDown" id="canvas" width="400" height="400">
+        浏览器不支持画布功能
+    </canvas>
+</div>
+
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    //transform CSS 属性允许您旋转、缩放、倾斜或平移元素。它修改了 CSS视觉格式化模型 的坐标空间。
+    // 如果该属性的值不同于none ，则将创建一个堆叠上下文 。在这种情况下，
+    // 该元素将充当任何位置的包含块 position: fixed;或position: absolute;它包含的元素。
+    // 警告：只有可转换的元素可以被transform 。也就是说，
+    // 所有布局都受 CSS 框模型控制的元素，除了： 不可替换的内联框 、表格列框 和表格列组框 。
+    ctx.transform(1, 1, 0, 1, 0, 0);
+    ctx.fillStyle = "skyblue";
+    ctx.fillRect(0, 0, 200, 200);
+</script>
+</body>
+</html>
